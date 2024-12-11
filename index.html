@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container p-3 myNavbar hover-opacity-off">
+      <div class="hamburger" onclick="toggleNavbar()">&#9776;</div><!-- Uncomment this line -->
+      <div class="col-sm-2 text-white logo">
+        <a href="#" id="logo">
+          <img src="images/logos.jpg" alt="" width="100%" height="100%">
+        </a>
+      </div>
+      
+      <div id="menu-modal" class="menu-modal container col-sm-10 genre-list">
+        <div id="navbar" class="menu-modal-content container menu-links col-sm-8 genre-list">
+          <span class="close-button" onclick="toggleNavbar()">&times;</span>
+          <button type="button" class="btn"><a href="#classes">Classes</a></button>
+          <button type="button" class="btn"><a href="#schedule">Schedule</a></button>
+          <button type="button" class="btn"><a href="#trainers">Trainers</a></button>
+          <button type="button" class="btn"><a href="#memberships">Memberships</a></button>
+          <button type="button" class="btn"><a href="#contacts">Contacts</a></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+ 
+<!-- Carousel -->
+<div id="demo" class="carousel slide mainPage" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <!-- First carousel item -->
+      <div class="carousel-item active">
+          <img src="images/carousel1.jpg" alt="Carousel1">
+          <div class="carousel-text-container">
+              <h2 class="quote">Discover a fitness club unlike any other.<br>
+                At NextLevel, we blend cutting-edge gym trends with advanced technology to redefine your workout experience.
+                Step into a world where fitness meets innovation,and take your journey to the next level.</h2>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/Carosel2.jpg" alt="Carousel2">
+      </div>
+      <div class="carousel-item">
+        <img src="images/carousel2.1.jpg" alt="Carousel2.1">
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+    <!-- Classes Section -->
+    <div class="myClasses" id="classes">
+        <h2>Group classes</h2>
+        <section class="category-classes">
+            <div class="class-item">
+                <img class="class-image" src="images/yoga.png" alt="ClassLive">
+                <div id="class-right-description">
+                    <h2>YOGA</h2>
+                    <p>Discover classes that will propel you forward on your journey 
+                      to body and mind harmony. We look forward to welcoming you in our 
+                      studios in Vinohrady and Karlín. During the summer season, we also 
+                      organize outdoor yoga in the fresh air at attractive locations 
+                      throughout Prague.</p>
+                </div>
+            </div>
+            <div class="class-item">
+                <div id="class-right-description">
+                    <h2>BATTLE</h2>
+                    <p>Battle is a transformative experience that pushes you beyond your limits. 
+                      The combination of boxing techniques and strength training, coupled with 
+                      the immersive atmosphere, creates an unparalleled workout that challenges 
+                      your body and mind. It's not about being the best in the world; it's about 
+                      discovering the best version of yourself.</p>
+                </div>
+                <img class="class-image" src="images/battle.png" alt="ClassGroup">
+            </div>
+            <div class="class-item">
+                <img class="class-image" src="images/booty.png" alt="ClassPersonal">
+                <div id="class-right-description">
+                    <h2>BOOTY</h2>
+                    <p>Booty group class will help you push yourself to the very edge of your physical 
+                      capabilities and achieve great results. It's a sophisticated concept that offers 
+                      a wide range of variations, intensities and motivational training programs, and 
+                      music will ensure an unforgettable experience that manifests itself with every 
+                      step. The class is focused on building strength and shaping the lower body. 
+                      Climbing the stairs has never been more fun.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+<div class="mySchedule" id="schedule">
+      <h1>Training Center Weekly Schedule</h1>
+      
+      <!-- Month and Week Navigation with Arrows -->
+      <div id="month-week-selection">
+        <div class="nav-btn-container">
+          <button id="prev-month" class="nav-btn">←</button>
+          <h2 id="selected-month">March 2024</h2>
+          <button id="next-month" class="nav-btn">→</button>
+        </div>
+        <div class="nav-btn-container">
+          <button id="prev-week" class="nav-btn">←</button>
+          <h3 id="selected-week">Week: March 1 - March 7</h3>
+          <button id="next-week" class="nav-btn">→</button>
+        </div>
+      </div>
+  
+      <!-- Week Display -->
+      <div class="schedule">
+        <div id="schedule-header">
+          <h2 id="schedule-week"></h2>
+        </div>
+  
+        <div id="schedule-days" class="schedule-days">
+          <!-- Week schedule will be inserted here by JS -->
+        </div>
+      </div>
+  
+      <!-- Time Slot Selection -->
+      <div id="time-slots" class="time-slots">
+        <h3>Available Training Times</h3>
+        <div id="times"></div>
+      </div>
+
+  <div id="booking-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <br>
+      <p id="modal-description"></p>
+      <br>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <button id="book-class-btn" class="book-btn">Book Class</button>
+    </div>
+  </div> 
+
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-confirmation-modal" class="close">&times;</span>
+      <h2>Your Class Has Been Booked!</h2>
+      <p id="confirmation-message"></p>
+      <button id="ok-btn" class="btn">OK</button>
+    </div>
+  </div>
+</div>
+  
+<div class="myTrainers" id="trainers">
+    <h2 class="meet-our-trainers">Meet Our Trainers</h2>
+
+  <!-- Filter Section - Dropdown to select gender and class -->
+    <section class="filter-section">
+        <div class="filter-group">
+            <label for="gender-select">Select Gender:</label>
+            <select id="gender-select">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="class-select">Select Class:</label>
+            <select id="class-select">
+                <option value="all">All</option>
+                <option value="yoga">Yoga</option>
+                <option value="pilates">Pilates</option>
+                <option value="zumba">Zumba</option>
+                <option value="boxing">Boxing</option>
+            </select>
+        </div>
+    </section>
+
+  <!-- Trainers Section -->
+    <section class="category-trainers">
+        <div class="trainer-item" data-gender="male" data-class="boxing">
+            <img class="trainer-image" src="images/trainers1.jpg" alt="Trainer1">
+            <div class="trainer-info">
+                <p>Name: John Davis</p>
+                <p>Specialty: Boxing</p>
+            </div>
+        </div>
+        <div class="trainer-item" data-gender="male" data-class="zumba">
+            <img class="trainer-image" src="images/trainers3.jpg" alt="Trainer3">
+            <div class="trainer-info">
+                <p>Name: Gabriel Gomes</p>
+                <p>Specialty: Zumba</p>
+            </div>
+        </div>
+        <div class="trainer-item" data-gender="male" data-class="boxing">
+            <img class="trainer-image" src="images/trainers4.jpg" alt="Trainer4">
+            <div class="trainer-info">
+                <p>Name: Michael Anderson</p>
+                <p>Specialty: Boxing</p>
+            </div>
+        </div>
+        <div class="trainer-item" data-gender="male" data-class="yoga">
+            <img class="trainer-image" src="images/trainers5.jpg" alt="Trainer5">
+            <div class="trainer-info">
+                <p>Name: David Johnson</p>
+                <p>Specialty: Yoga</p>
+            </div>
+        </div>
+        <div class="trainer-item" data-gender="female" data-class="pilates">
+            <img class="trainer-image" src="images/trainers6.jpeg" alt="Trainer6">
+            <div class="trainer-info">
+                <p>Name: Emma Miller</p>
+                <p>Specialty: Pilates</p>
+            </div>
+        </div>
+        <div class="trainer-item" data-gender="female" data-class="yoga">
+            <img class="trainer-image" src="images/trainers7.jpg" alt="Trainer7">
+            <div class="trainer-info">
+                <p>Name: Bella Cooper</p>
+                <p>Specialty: Yoga</p>
+            </div>
+        </div>
+    </section>
+        <!-- Trainer Detail Modal -->
+  <div id="trainer-detail-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-trainer-modal" class="close">&times;</span>
+      <div id="trainer-detail-content">
+        <img id="trainer-detail-image" src="" alt="Trainer Photo" />
+        <div id="trainer-detail-info">
+          <h3 id="trainer-detail-name"></h3>
+          <p id="trainer-detail-specialty"></p>
+          <p id="trainer-detail-bio"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- No Result Message -->
+    <div id="no-result-message" class="no-result">
+      No results found.
+    </div>
+</div>
+
+
+ <!-- Memberships Section -->
+<div class="myMemberships" id="memberships">
+    <h2 style ="color:white">Memberships</h2>
+    <p>Become a member of our healthy lifestyle-obsessed community<br>and enjoy the perks of this unique fitness club. 
+     You are only one step away<br>from taking your life to the next level.</p>
+     <section class="membership-section">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="membership-title">Next.Level Flexible</h3>
+        </div>
+        <div class="card-image">
+          <img src="images/flexible.JPG" alt="Flexible Membership">
+        </div>
+        <div class="card-description">
+            <p>Exercise without any obligations. With unlimited membership, it's up to you how you plan your training program.</p>
+            <ul>
+              <li>Entry to clubs in Holešovice, Vinohrady, Karlin, and Smíchov</li>
+              <li>No obligations</li>
+              <li>Fitness, cardio, and functional zones</li>
+            </ul>
+            <p class="membership-price">2 490,-</p>
+        </div>
+        <button class="exBuyBtn">Buy</button>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h3 class="membership-title">Next.Level 6 months</h3>
+        </div>
+        <div class="card-image">
+          <img src="images/6months.JPG" alt="Six-Month Membership">
+        </div>
+        <div class="card-description">
+            <p>Membership with fixation for 6 months motivates you to exercise regularly.</p>
+            <ul>
+              <li>Entry to clubs in Holešovice, Vinohrady, Karlin, and Smíchov</li>
+              <li>20% discount compared to flexible</li>
+            </ul>
+            <p class="membership-price">1 990,-</p>
+        </div>
+        <button class="exBuyBtn">Buy</button>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+          <h3 class="membership-title">Next.Level Start</h3>
+        </div>
+        <div class="card-image">
+          <img src="images/start.JPG" alt="Start Membership">
+        </div>
+        <div class="card-description">
+            <p>The perfect choice for beginners starting their journey to a healthy lifestyle.</p>
+            <ul>
+              <li>2 personal training sessions with a trainer</li>
+              <li>Entry to clubs in Holešovice</li>
+            </ul>
+            <p class="membership-price">4 550,-</p>
+        </div>
+        <button class="exBuyBtn">Buy</button>
+      </div>
+    </section>
+</div>
+
+<!-- Modal -->
+<div id="membershipModal" class="modal">
+  <div class="modal-content">
+      <span class="close_membership">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <ul id="modalList"></ul>
+      <p id="modalPrice"></p>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <button id="buyButton">Confirm Purchase via E-mail</button>
+  </div>
+</div>
+
+<!-- Email Confirmation Modal -->
+<div id="emailConfirmationModal" class="modal">
+  <div class="modal-content">
+    <span class="close_membership close_confirmation">&times;</span>
+    <h2>Confirmation</h2>
+    <p>Your payment instructions have been sent to your email!</p>
+  </div>
+</div>
+
+<div class="myContacts" id="contacts">
+  <h2>Our Contacts</h2>
+  <section class="contacts">
+    <div class="class-contacts">
+        <div id="contacts-description">
+            <h3>RYBNÁ 682/14</h3>
+            <p>Experience the blend of industrial design with an above-standard 
+              equipped gym and a super-modern studio for the signature group class 
+              concept Next.Boost.You can find us on Svornosti Street in the FIVE 
+              building in Prague's Smíchov.</p>
+            <p>Rybná 682/14 <br>
+            110 00 Staré Město</p>
+            <p>Tel.: +420 753 13 79</p>
+            <p>Mail: nextlevelsport@gmail.com</p>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.9097069461327!2d14.422808016485597!3d50.08797737172807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94ea682e5a8b%3A0xbd7e1e7df0789937!2sExchange%20Palace!5e0!3m2!1sen!2scz!4v1732572385413!5m2!1sen!2scz" 
+          class="locationMap" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</div>
+
+<div class="myAboutNextLevel" id="aboutNextLevel">
+    <h2>About NextLevel</h2>
+  <section class="about-us">
+    <div class="about-content">
+      <img src="images/middle-image.webp" alt="About Us">
+      <div class="about-description">
+        <p>
+         Our fitness center blends modern design with the latest fitness technology, creating the perfect space for your workout.
+         Alongside a full range of equipment, you'll find a cozy lounge with a Fuel Bar,
+         and a unique atmosphere that elevates your fitness experience. 
+         Whether you're taking part in group classes or working out solo,
+         our space is designed to inspire and help you take your fitness to the next level.
+        </p>
+      </div>
+    </div>
+  <div class="about-content">
+    <div class="about-description">
+      <p>
+       NextLevel is a unique fitness space in Prague, designed to help you unlock your full fitness potential. 
+       We prioritize your health and overall exercise experience above all else,ensuring that performance is always balanced with well-being.
+       Every aspect of our gym is meticulously planned, down to the smallest detail. 
+       Our flagship location serves as a welcoming environment where both beginners and professional athletes can thrive. 
+       Whether you're into classic workout routines or cutting-edge fitness trends, our training programs are designed to cater to every preference and level.
+      </p>
+    </div>
+    <img src="images/bottom-image.webp" alt="Community Fitness">
+  </div>
+</section>
+</div>
+  <div class="video-container">
+    <video id="myVideo" class="video" controls>
+      <source src="manifest.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button id="playPauseBtn">Play/Pause</button>
+      <button id="fullscreenBtn">Fullscreen</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="footer-container">
+      <div class="footer-section">
+          <h3>General information</h3>
+          <ul>
+            <li><a href="#aboutNextLevel">About NextLevel</a></li>
+              <li><a href="Statista-Terms-Conditions.pdf" target="_blank">Terms and conditions</a></li>
+          </ul>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="Health care.pdf" target="_blank">Health care</a></li>
+            <li><a href="Safe guide.pdf" target="_blank">Safe guide</a></li>
+          </ul>
+      </div>
+          <div class="footer-logo">
+            <img src="images/logos.jpg" alt="NextLevel Logo">
+          </div>  
+          <pre><i class="fa-regular fa-copyright"></i> 2024  NextLevel</pre>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

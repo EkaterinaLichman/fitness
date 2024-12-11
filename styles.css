@@ -1,0 +1,1083 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika&family=Poppins:ital@1&display=swap');
+
+body{
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+/* Header and Hamburger */
+header {
+  background-color: black;
+  height: auto;
+  overflow: hidden;
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 1000; 
+  opacity: 0.4; 
+}
+
+header:hover {
+  opacity: 1;
+}
+
+.myNavbar{
+  margin: 0;
+  padding: 0;
+  height: 15vh;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  display: none; /* Hidden by default; shown only on small screens */
+}
+
+/* Navbar */
+#navbar {
+  display: flex; /* Visible by default for larger screens */
+}
+
+#navbar.active {
+  display: flex;
+  flex-direction: column; /* Stacked layout for smaller screens when active */
+}
+
+/* Buttons */
+.btn {
+  background-color: white;
+  border: 2px solid black; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; 
+}
+
+.btn a {
+  text-decoration: none; 
+  color: white;
+  font-size: 18px; 
+}
+
+.btn a:hover {
+  color: #2bafc4; 
+}
+
+
+
+
+.close-button {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: black;
+  cursor: pointer;
+}
+
+
+.carousel-item {
+  height: 100vh;
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-text-container{
+  position: absolute;
+  top: 70%; 
+  left: 23%;
+  z-index: 1; 
+}
+
+ .carousel-text-container h2{
+  color:white;
+}
+
+.carousel-btn:hover {
+  background-color: black;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: transparent;
+}
+
+.quote {
+    font-size: 30px;
+    font-style: italic;
+}
+
+.myClasses{
+  background-color: white;
+  height: auto;
+}
+
+#classes>h2{
+  color: black;
+}
+
+.class-item,
+.class-contacts {
+  display: flex;
+  margin: 0 10vh;
+  padding: 5vh 0;
+}
+
+.class-image {
+  width: 50%;
+  border-radius: 10%;
+}
+
+#class-right-description {
+  width: 50%;
+  padding: 0 10vh; 
+  text-align: justify;
+}
+
+#class-right-description h2 {
+  color: black;
+  padding: 5vh 0vh 10vh;
+}
+
+
+/*Schedule Section*/
+
+.mySchedule {
+  background-image: linear-gradient(to bottom, white, black);;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10vh;
+}
+
+.mySchedule h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  padding-top: 15vh;
+  text-align: center;
+}
+
+#month-week-selection {
+  margin: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-btn {
+  padding: 1vh;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  text-align: center;
+  padding-bottom: 1.5vh;
+  font-weight: bolder;
+}
+
+.nav-btn:hover {
+  background-color: transparent;
+}
+
+.schedule-days {
+  display: flex;
+}
+
+.schedule-day {
+  width: 15%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  text-align: center;
+}
+
+.schedule-day h3 {
+  margin-bottom: 10px;
+}
+
+.schedule-day button {
+  padding: 1vh;
+  border-radius: 5px;
+}
+
+.schedule-day.active-day {
+  background-color: #d3d3d3; /* Grey background */
+  border: 1px solid #a9a9a9; /* Optional: darker border for the greyed-out effect */
+}
+
+.time-slots {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#times {
+  margin-top: 15px;
+}
+
+.time-slot {
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.time-slot:hover {
+  background-color: rgba(128, 128, 128, 0.61);
+}
+
+/* Modal Background */
+.modal {
+  display: none;  /* Hidden by default */
+  position: fixed; /* Fixed at the top */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 50%;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Button Styling */
+.book-btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Confirmation Modal Styling (smaller than the booking modal) */
+#confirmation-modal .modal-content {
+  width: 82vh; /* Smaller width */
+  max-width: 90%;
+  padding: 4vh;
+}
+
+#confirmation-modal .btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #fff;
+}
+
+#confirmation-modal .btn:hover,
+.btn:hover  {
+  background-color: #2bafc4;
+}
+
+
+/*Training Section*/
+
+.myTrainers {
+  background-color: black;
+  height: auto;  
+}
+
+.myTrainers h2,
+.myClasses h2,
+.myMemberships h2,
+.myContacts h2,
+.about-description h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding-top: 15vh;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: black;
+  margin: 5vh 40vh;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+}
+
+.filter-group label {
+  margin-right: 3vh;
+  font-weight: bold;
+  color: white
+}
+
+.filter-group select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.category-trainers {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr); 
+  row-gap: 30px; 
+  justify-items: center; 
+  align-items: start; 
+  margin: 0 20vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.trainer-item {
+  width: 100%; 
+  max-width: 300px; 
+  overflow: hidden;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  position: relative; 
+}
+
+.trainer-item:hover .trainer-info {
+  opacity: 1; 
+}
+
+.trainer-image {
+  width: 80%;
+  height: auto; 
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.trainer-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+/* Trainer Detail Modal Styling */
+#trainer-detail-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+}
+
+#trainer-detail-modal .modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Modal width */
+}
+
+#trainer-detail-modal .close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+#trainer-detail-modal .close:hover,
+#trainer-detail-modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Trainer details */
+#trainer-detail-content {
+  display: flex;
+}
+
+#trainer-detail-image {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+#trainer-detail-info h3 {
+  font-size: 24px;
+}
+
+#trainer-detail-info p {
+  font-size: 16px;
+}
+
+#trainer-detail-specialty {
+  margin: 3vh 0;
+}
+
+.no-result {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+
+/*Membership Section*/
+
+.myMemberships {
+  background-color: black;
+  min-height: 120vh;  
+}
+
+.myMemberships p {
+  padding-top: 2%;
+  color: white;
+  text-align: center;
+}
+
+.membership-section {
+  display: flex;
+  justify-content: space-between; 
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Individual Card */
+
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 30%;
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-description {
+  min-height: 40vh;
+  position: relative;
+}
+
+.card-description p {
+  color: #000;
+}
+
+.membership-price {
+  font-size: 4vh;
+  font-weight: bold;
+  color: #000;
+  position: absolute;
+  top: 90%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.exBuyBtn {
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 1vh 20px;
+}
+
+.exBuyBtn:hover {
+  background-color: #2bafc4;
+  color: white;
+}
+
+
+/* Close button styles */
+
+.close_membership, 
+.close_confirmation {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  right: 25px;
+  top: 10px;
+}
+
+.close_membership:hover, 
+.close_membership:focus, 
+.close_confirmation:hover, 
+.close_confirmation:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Button inside modal */
+#buyButton {
+  background-color: white;
+  color: black;
+  padding: 1vh 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+#buyButton:hover {
+  background-color: #2bafc4;
+}
+
+
+/*Contacts Section*/
+
+
+.myContacts {
+  background-color: rgba(102, 95, 95, 0.185);
+  height: auto;
+  min-height: 100vh;
+}
+
+.myContacts h2 {
+  color: black;
+}
+
+#contacts-description {
+  color: black;
+  width: 50%;
+  padding: 0 10vh; 
+  text-align: justify;
+}
+
+.locationMap {
+  width: 90%;
+  height: 60vh;
+  border: 0;
+}
+
+
+/*About Section*/
+
+.myAboutNextLevel {
+  height: 0 auto;
+  background: white;
+}
+
+.myAboutNextLevel h2 {
+  font-size: 6vh;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.about-content {
+  display: flex;
+  margin: 0 10vh;
+  padding: 5vh 0;
+}
+
+.about-content img {
+  width: 50%;
+  border-radius: 10%;
+}
+
+.about-description {
+  width: 50%;
+  padding: 0 10vh; 
+  text-align: justify;
+}
+
+.about-description p {
+  color: black;
+  padding: 10vh 0vh;
+}
+
+.video-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 10vh 35vh 8vh 40vh;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Controls Styling */
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background: #333;
+}
+
+.controls button {
+  background-color: #2bafc4;
+  color: white;
+  border: 1px solid #2bafc4;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #2bafc4;
+}
+
+
+/* Footer Section */
+
+.footer-container {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: white; 
+  text-decoration: none; 
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #2bafc4; 
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 30px;
+  margin-top: -18px;
+}
+
+.footer-logo img {
+  width: 300px; 
+  height: auto;
+}
+
+pre {
+  color: white;
+  text-align: center;
+  font-size: 10vh;
+  margin: 5vh 20vh;
+  width: 100%
+}
+/* Mobile (480px and below) Adaptation */
+@media (max-width: 480px) {
+
+  body{
+    width: 100%;
+  }
+
+  header {
+    justify-content: flex-start;
+  }
+    /* Header adjustments */
+  .hamburger {
+      display: block; /* Display Hamburger */
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      position: relative;
+
+      left: 0px;
+  }
+
+  .myNavbar{
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+  }
+
+  .myNavbar .genre-list {
+    display: none; /* Hide the regular menu on small screens */
+  }
+
+  #navbar {
+      display: flex; /* Hide regular navbar on small screens */
+  }
+  
+  #navbar.active {
+      display: flex; /* Show stacked navbar when active */
+  }
+
+  .menu-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  }
+
+  /* Ensure the menu modal is hidden by default */
+
+
+  .menu-modal-content {
+    position: relative;
+    top: 20%;
+    margin: 0;
+    width: 80%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Optional: centers the buttons horizontally */
+  }
+
+  .menu-links .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .menu-links .btn a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .menu-links .btn:hover {
+    background-color: #2bafc4;
+  }
+    
+  
+  .genre-list button {
+      margin: 5px 0; /* Reduced spacing between buttons */
+      width: 100%; /* Full width for buttons */
+      font-size: 16px; /* Slightly smaller font size */
+  }
+  
+  .genre-list a {
+      color: white; /* Ensure good contrast */
+      font-size: 18px; /* Slightly larger for easy readability */
+  }
+  
+    /* Ensure buttons are easily tappable */
+  .btn {
+      padding: 12px 10px; /* Larger touch area */
+  }
+  
+    /* Logo adjustments */
+
+  .logo{
+    width: 60%;
+  }
+
+  .logo img {
+      max-width: 80%; /* Scale logo for smaller devices */
+      height: auto; /* Maintain aspect ratio */
+      position: relative;
+      left: 20%;
+  }
+  
+
+  /* Carousel Adjustments */
+  .carousel-item {
+    height: 60vh; /* Adjust carousel height for small screens */
+  }
+
+  .carousel-text-container {
+    top: 60%; /* Adjust position of text */
+    left: 10%;
+    width: 80%;
+  }
+
+  .carousel-text-container h2 {
+    font-size: 20px; /* Make text smaller */
+  }
+
+  /* Class Section */
+  .class-item, .class-contacts {
+    flex-direction: column; /* Stack class items vertically */
+    margin: 10px;
+    padding: 5px 0;
+  }
+
+  .class-image {
+    width: 100%; /* Full-width images */
+    border-radius: 5%;
+  }
+
+  #class-right-description {
+    width: 100%;
+    padding: 0 5vh;
+    text-align: justify;
+  }
+
+  /* Schedule Section */
+  .mySchedule {
+    padding: 0 5vh;
+  }
+
+  #month-week-selection {
+    margin: 2vh 0;
+  }
+
+  .schedule-days {
+    flex-direction: column; /* Stack schedule days vertically */
+  }
+
+  .schedule-day {
+    width: 100%; /* Full-width day blocks */
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 90%;
+    max-width: 80%;
+    padding: 5vh;
+  }
+
+  /* Trainer Section */
+  .category-trainers {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .filter-section{
+    margin-left: 10px;
+  }
+
+  .filter-group{
+    margin-left: 30px;
+  }
+  .trainer-item {
+    width: 100%; /* Full-width cards */
+  }
+
+  /* Membership Section */
+  .membership-section {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%; /* Full-width cards */
+    padding: 10px;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column; /* Stack footer sections vertically */
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%; /* Full-width footer sections */
+    margin-bottom: 10px;
+  }
+
+  /* About Section */
+  .about-content {
+    flex-direction: column; /* Stack about section content vertically */
+  }
+
+  .about-content img {
+    width: 100%; /* Full-width images */
+    border-radius: 5%;
+  }
+
+  .about-description {
+    width: 100%;
+    padding: 5vh;
+  }
+
+  /* Video */
+  .video-container {
+    width: 90%;
+    margin: 10vh auto 5vh;
+  }
+
+  .myContacts h2 {
+    font-size: 20px; /* Slightly smaller heading on small screens */
+  }
+
+  #contacts-description {
+    width: 90%; /* Increase width to 90% for better mobile layout */
+    font-size: 14px; /* Reduce text size for smaller screens */
+    padding: 0 5%; /* Less padding on mobile */
+  }
+
+  .locationMap {
+    width: 100%; /* Ensure the map takes full width */
+    height: 50vh; /* Slightly reduce map height for smaller screens */
+  }
+
+  /* Modal Styling */
+  #trainer-detail-modal .modal-content {
+    width: 90%; /* Full-width trainer detail modal */
+  }
+
+  /* Adjust the pre tag for smaller screens */
+  pre {
+    font-size: 6vh; /* Adjust font size */
+    margin: 5vh 5vh;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
